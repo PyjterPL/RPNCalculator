@@ -6,9 +6,14 @@ using System.Text;
 
 namespace Calculator.Core.Tokens
 {
-    class TokenFactory : ITokenFactory
+    public class TokenFactory : ITokenFactory
     {
-        public Token GetToken(string sign)
+        private List<Token> _registeredTokens = new List<Token>();
+        public TokenFactory()
+        {
+
+        }
+        public Token GetToken(char sign)
         {
             throw new NotImplementedException();
         }

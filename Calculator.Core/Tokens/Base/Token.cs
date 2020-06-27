@@ -6,11 +6,11 @@ namespace Calculator.Core.Tokens.Base
 {
     public abstract class Token
     {
-        public readonly char Sign;
+        public readonly string Entry;
 
-        public Token(char sign)
+        public Token(string entry)
         {
-            Sign = sign;
+            Entry = entry;
         }
     }
 }

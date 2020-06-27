@@ -11,7 +11,7 @@ namespace Calculator.Core.Tokens.Base
             get { return 1; }
         }
 
-        public OperatorBase(char sign) : base(sign)
+        public OperatorBase(string entry) : base(entry)
         {
         }
 

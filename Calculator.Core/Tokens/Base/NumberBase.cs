@@ -7,7 +7,7 @@ namespace Calculator.Core.Tokens.Base
     public abstract class NumberBase : Token
     {
         public abstract decimal Value { get; }
-        public NumberBase(char sign) : base(sign)
+        public NumberBase(string entry) : base(entry)
         {
         }
     }

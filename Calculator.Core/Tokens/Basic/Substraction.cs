@@ -7,7 +7,7 @@ namespace Calculator.Core.Tokens.Basic
 {
     public class Substraction : OperatorBase
     {
-        public Substraction(char sign) : base(sign)
+        public Substraction(string entry) : base(entry)
         {
         }
 

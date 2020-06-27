@@ -1,5 +1,6 @@
 ﻿using Calculator.Core;
 using Calculator.Core.Interfaces;
+using Calculator.Core.Tokens;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Calculator.Tests
         [SetUp]
         public void Setup()
         {
-            _formatter = new DijkstraRPNExpressionFormatter();
+            _formatter = new DijkstraRPNExpressionFormatter(new TokenFactory());
         }
 
         [Test]

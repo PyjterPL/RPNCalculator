@@ -7,7 +7,7 @@ namespace Calculator.Core.Tokens.Brackets
 {
     public class RightBracket : Token
     {
-        public RightBracket(char sign) : base(sign)
+        public RightBracket(string entry) : base(entry)
         {
         }
     }

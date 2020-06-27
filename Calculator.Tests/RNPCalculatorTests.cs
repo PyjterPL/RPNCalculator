@@ -3,6 +3,7 @@ using Calculator.Interfaces;
 using Calculator.UserInterface;
 using Calculator.Core.Interfaces;
 using Calculator.Core;
+using Calculator.Core.Tokens;
 
 namespace Calculator.Tests
 {
@@ -13,7 +14,7 @@ namespace Calculator.Tests
         [SetUp]
         public void Setup()
         {
-            _calculator = new RPNCalculator(new DijkstraRPNExpressionFormatter());
+            _calculator = new RPNCalculator(new DijkstraRPNExpressionFormatter(new TokenFactory()));
         }
 
         [Test]

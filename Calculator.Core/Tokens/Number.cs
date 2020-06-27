@@ -8,10 +8,10 @@ namespace Calculator.Core.Tokens
 {
     class Number : NumberBase
     {
-        public Number(char sign) : base(sign)
+        public Number(string entry) : base(entry)
         {
         }
 
-        public override decimal Value => decimal.Parse(Sign.ToString());
+        public override decimal Value => decimal.Parse(Entry.ToString());
     }
 }

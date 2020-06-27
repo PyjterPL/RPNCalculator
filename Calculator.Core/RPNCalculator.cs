@@ -14,6 +14,8 @@ namespace Calculator.Core
         }
         public double Calculate(string expression)
         {
+            var formattedExpression = _RPNExpressionFormatter.FormatToRPN(expression);
+
             throw new NotImplementedException();
         }
     }

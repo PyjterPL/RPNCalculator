@@ -7,6 +7,6 @@ namespace Calculator.Core.Interfaces
 {
     public interface ITokenFactory
     {
-        Token GetToken(string sign);
+        Token GetToken(char sign);
     }
 }

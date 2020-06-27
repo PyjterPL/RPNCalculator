@@ -7,7 +7,7 @@ namespace Calculator.Core.Tokens.Basic
 {
     public class Division : OperatorBase
     {
-        public Division(char sign) : base(sign)
+        public Division(string entry) : base(entry)
         {
         }
 

@@ -7,7 +7,7 @@ namespace Calculator.Core.Tokens.Basic
 {
     public class Multiplication : OperatorBase
     {
-        public Multiplication(char sign) : base(sign)
+        public Multiplication(string entry) : base(entry)
         {
         }
 
