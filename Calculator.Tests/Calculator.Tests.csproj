@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RPNCalculator.App\RPNCalculator.App.csproj" />
+    <ProjectReference Include="..\Calculator.App\Calculator.App.csproj" />
+    <ProjectReference Include="..\Calculator.Core\Calculator.Core.csproj" />
   </ItemGroup>
 
 </Project>

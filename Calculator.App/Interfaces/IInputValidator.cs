@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPNCalculator.Interfaces
+namespace Calculator.Interfaces
 {
     public interface IInputValidator
     {

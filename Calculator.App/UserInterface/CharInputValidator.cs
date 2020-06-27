@@ -1,10 +1,10 @@
-﻿using RPNCalculator.Interfaces;
+﻿using Calculator.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RPNCalculator.UserInterface
+namespace Calculator.UserInterface
 {
     public class CharInputValidator : IInputValidator
     {

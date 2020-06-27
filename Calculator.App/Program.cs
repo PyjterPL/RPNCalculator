@@ -1,10 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using RPNCalculator.Interfaces;
-using RPNCalculator.UserInterface;
+using Calculator.Core.Interfaces;
+using Calculator.Interfaces;
+using Calculator.UserInterface;
 using System;
 using System.Net.NetworkInformation;
+using Calculator.Core;
 
-namespace RPNCalculator.App
+namespace Calculator.App
 {
     class Program
     {
@@ -14,6 +16,7 @@ namespace RPNCalculator.App
             _servicesProvider = new ServiceCollection()
                 .AddScoped<IMainProgram, MainConsole>()
                 .AddScoped<IInputValidator, CharInputValidator>()
+                .AddScoped<ICalculator, RPNCalculator>()
                 .BuildServiceProvider();
         }
         static void Main(string[] args)

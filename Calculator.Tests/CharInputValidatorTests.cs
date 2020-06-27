@@ -1,8 +1,8 @@
 using NUnit.Framework;
-using RPNCalculator.Interfaces;
-using RPNCalculator.UserInterface;
+using Calculator.Interfaces;
+using Calculator.UserInterface;
 
-namespace RPNCalculator.Tests
+namespace Calculator.Tests
 {
     public class InputValidatorTests
     {
