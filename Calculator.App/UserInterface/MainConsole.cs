@@ -11,7 +11,7 @@ namespace Calculator.UserInterface
         private readonly IInputValidator _inputValidator;
         private readonly ICalculator _calculator;
         private readonly string _menuMessage = "Insert string expression of mathematical operation. Press enter to calculate. \nOnly + - / * operations, braces and integers are allowed. \nPress 'c' to clean exspression.\nPress 'esc' to quit.";
-        private string _input;
+        private string _input = string.Empty;
 
         public MainConsole(IInputValidator inputValidator, ICalculator calculator)
         {
@@ -43,7 +43,7 @@ namespace Calculator.UserInterface
                         if (_input.Length > 0)
                         {
                             _input = _input.Remove(_input.Length - 1);
-                            Console.Write(pressedKey.KeyChar);
+                            Console.Write("\b \b");
                         }
                     }
                     else if(pressedKey.Key == ConsoleKey.Escape)

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Calculator.Core.Tokens
 {
-    class Number : NumberBase
+    public class Number : NumberBase
     {
         public Number(string entry) : base(entry)
         {

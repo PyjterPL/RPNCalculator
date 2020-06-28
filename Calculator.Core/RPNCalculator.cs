@@ -14,9 +14,10 @@ namespace Calculator.Core
         }
         public double Calculate(string expression)
         {
+            double result = 0;
             var formattedExpression = _RPNExpressionFormatter.FormatToRPN(expression);
 
-            throw new NotImplementedException();
+            return result;
         }
     }
 }
