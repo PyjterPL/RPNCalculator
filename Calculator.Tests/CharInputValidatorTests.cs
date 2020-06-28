@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using Calculator.Interfaces;
 using Calculator.UserInterface;
+using Calculator.Core.Tokens;
 
 namespace Calculator.Tests
 {
@@ -11,7 +12,7 @@ namespace Calculator.Tests
         [SetUp]
         public void Setup()
         {
-            _inputValidator = new CharInputValidator();
+            _inputValidator = new CharInputValidator(new TokenFactory());
         }
 
         [Test]
