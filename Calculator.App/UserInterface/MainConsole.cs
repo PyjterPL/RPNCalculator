@@ -11,6 +11,7 @@ namespace Calculator.UserInterface
         private readonly IInputValidator _inputValidator;
         private readonly ICalculator _calculator;
         private readonly string _menuMessage = "Insert string expression of mathematical operation. Press enter to calculate. \nOnly + - / * operations, braces and integers are allowed. \nPress 'c' to clean exspression.\nPress 'esc' to quit.";
+        private readonly string _invalidInputMessage = "Invalid input";
         private string _input = string.Empty;
 
         public MainConsole(IInputValidator inputValidator, ICalculator calculator)
@@ -18,7 +19,7 @@ namespace Calculator.UserInterface
             _inputValidator = inputValidator;
             _calculator = calculator;
         }
-        
+
         public void Run()
         {
             DisplayMenu();
@@ -46,11 +47,11 @@ namespace Calculator.UserInterface
                             Console.Write("\b \b");
                         }
                     }
-                    else if(pressedKey.Key == ConsoleKey.Escape)
+                    else if (pressedKey.Key == ConsoleKey.Escape)
                     {
                         Environment.Exit(0);
                     }
-                    else if(pressedKey.Key == ConsoleKey.C)
+                    else if (pressedKey.Key == ConsoleKey.C)
                     {
                         Console.Clear();
                         DisplayMenu();
@@ -67,7 +68,19 @@ namespace Calculator.UserInterface
                 }
                 while (pressedKey.Key != ConsoleKey.Enter);
 
-                Console.WriteLine(_calculator.Calculate(_input));
+                if (_input.Length > 0)
+                {
+                    try
+                    {
+                        Console.WriteLine($" = {_calculator.Calculate(_input)}");
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine(_invalidInputMessage);
+                    }
+                    _input = string.Empty;
+                }
             }
         }
     }

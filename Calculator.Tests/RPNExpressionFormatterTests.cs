@@ -22,7 +22,7 @@ namespace Calculator.Tests
         }
 
         [Test]
-        public void BracesTest()
+        public void BracketsTest()
         {
             var expectedQueue = new Queue<Token>();
             expectedQueue.Enqueue(new Number("2"));
@@ -47,7 +47,7 @@ namespace Calculator.Tests
             }
         }
 
-        public void NoBracesTest()
+        public void NoBracketsTest()
         {
             var expectedQueue = new Queue<Token>();
             expectedQueue.Enqueue(new Number("2"));

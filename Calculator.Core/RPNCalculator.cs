@@ -1,5 +1,9 @@
 ﻿using Calculator.Core.Interfaces;
+using Calculator.Core.Tokens;
+using Calculator.Core.Tokens.Base;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -12,12 +16,43 @@ namespace Calculator.Core
         {
             _RPNExpressionFormatter = RPNExpressionFormatter;
         }
-        public double Calculate(string expression)
+        public string Calculate(string expression)
         {
-            double result = 0;
-            var formattedExpression = _RPNExpressionFormatter.FormatToRPN(expression);
+            var formattedExpression = new Queue<Token>();
+            try
+            {
+                formattedExpression = _RPNExpressionFormatter.FormatToRPN(expression);
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
 
-            return result;
+            var resStack = new Stack<Token>();
+
+            while (formattedExpression.Count > 0)
+            {
+                var actualToken = formattedExpression.Dequeue();
+                if (actualToken is Number)
+                {
+                    resStack.Push(actualToken);
+                }
+                else if (actualToken is OperatorBase)
+                {
+                    var a = (resStack.Pop() as Number);
+                    var b = (resStack.Pop() as Number);
+
+                    var calculationResult = new Number((actualToken as OperatorBase).Calculate(b.Value, a.Value).ToString());
+
+                    resStack.Push(calculationResult);
+                }
+            }
+
+            if (resStack.Count > 0)
+            {
+                return (resStack.Pop() as Number).Value.ToString();
+            }
+            return "0";
         }
     }
 }
